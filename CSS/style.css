@@ -1,0 +1,305 @@
+/* ? Imports */
+/* _______________________________________________________________ */
+
+/* ? Variables */
+:root {
+   /* Color Theme */
+   --Primary: hsl(14, 100%, 57%);
+   --Secondary: hsl(229, 97%, 49%);
+   --Text: hsl(0, 0%, 20%);
+   --Description-Hero: hsl(0, 0%, 20%);
+   --Description-Box: hsl(0, 0%, 60%);
+   --Description-Box-border: hsl(0, 0%, 80%);
+   --background: hsl(0, 0%, 100%);
+
+   /* Typography */
+
+   /* Spacing */
+
+   /* Border Radius */
+
+   /* Shadows */
+}
+
+/* ? Color Theme for Dark mode goes here */
+/* .dark-mode {
+
+} */
+/* _______________________________________________________________ */
+/* !Main CSS */
+/* ? Header */
+body {
+   width: 100%;
+   direction: rtl;
+   position: relative;
+}
+
+header {
+   width: min(95%, 60em);
+   margin: 0 auto;
+}
+
+ul {
+   width: 100%;
+   height: 3rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+}
+
+li h3 {
+   font-size: 1rem;
+   font-weight: 400;
+}
+
+li h3 a {
+   transition: 0.3s ease;
+}
+
+li h3 a:hover {
+   color: var(--Primary);
+   text-decoration: underline;
+   text-underline-offset: 0.4em;
+}
+
+.list-items {
+   width: min(25em, 40%);
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+}
+
+.logo {
+   background: var(--Secondary);
+   color: var(--background);
+   align-self: self-start;
+   padding: 0.5em 1em;
+   border-radius: 0 0 50px 50px;
+}
+
+.logo h3 {
+   font-size: 0.75rem;
+}
+
+.logo h3 a:hover {
+   font-size: 0.75rem;
+}
+
+.logo h3 a:hover {
+   text-decoration: none;
+   color: var(--background);
+}
+
+.Hamburger-icon {
+   display: none;
+}
+
+/* ? Hero */
+/* ? Top */
+.top-hero {
+   display: flex;
+   justify-content: space-between;
+}
+
+.img {
+   width: 48%;
+}
+
+.img img {
+   width: 100%;
+}
+
+.text {
+   width: 48%;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   padding: 3.5em;
+}
+
+.text h1 {
+   font-size: clamp(1.8rem, 3vw, 5rem);
+   margin-top: 1em;
+}
+
+.text h1 span {
+   color: var(--Primary);
+}
+
+.text p {
+   font-size: clamp(0.9rem, 1.25vw, 5rem);
+   color: var(--Description-Hero);
+   margin-top: 2em;
+}
+
+.text button {
+   margin-top: 3em;
+   background: var(--Primary);
+   color: var(--background);
+   padding: 0.75em 1.5em;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+/* ? Bottom */
+.bottom-hero {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   margin-block: 2em;
+}
+
+.description {
+   border: 1px solid var(--Description-Box-border);
+   padding: 1em 2em;
+   border-radius: 10px;
+   text-align: center;
+   width: 32%;
+}
+
+.description p {
+   color: var(--Description-Box);
+   margin-top: 0.75em;
+   font-size: 0.8rem;
+}
+
+.menu {
+   display: none;
+}
+/* _______________________________________________________________ */
+/* ? Media Queries */
+/* Different Screen Sizes 
+-Small Mobile = 320px
+-Medium Mobile = 375px
+-Large Mobile = 425px
+Tablet = 768px
+Laptop = 1024px
+Large Laptop = 1440px
+4K = 2560px
+*/
+
+@media (max-width: 601px) {
+   header {
+      display: none;
+   }
+
+   .desctop-nav {
+      display: none;
+   }
+
+   .Hamburger-icon {
+      display: block;
+      width: 2em;
+      height: 2em;
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      margin-right: 0.5em;
+      cursor: pointer;
+   }
+
+   .top-hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .img {
+      width: 100%;
+   }
+
+   .img img {
+      order: 1;
+      width: min(25em, 90%);
+      margin: 0 auto;
+   }
+
+   .text {
+      order: 2;
+      width: 100%;
+      padding: 1em 1.5em;
+   }
+
+   .text button {
+      margin-block: 1.5em;
+   }
+
+   .bottom-hero {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+   }
+
+   .description {
+      padding: 1em 2em;
+      border-radius: 10px;
+      text-align: center;
+      width: 90%;
+   }
+
+   .description p {
+      font-size: 0.9rem;
+   }
+
+   .menu {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      right: 0em;
+      width: min(80%, 15em);
+      height: 100vh;
+      background: var(--Primary);
+      transform: translateX(100%);
+      transition: 0.5s ease-in;
+   }
+
+   .menu i {
+      display: block;
+      width: 2em;
+      height: 2em;
+      display: flex;
+      align-items: center;
+      font-size: 2rem;
+      margin-right: 0.5em;
+      color: var(--background);
+      cursor: pointer;
+   }
+
+   .menu ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      height: 100%;
+      text-align: right;
+      margin-top: 1em;
+   }
+
+   .menu ul li {
+      width: 100%;
+      padding-right: 1.5em;
+      padding-block: 1em;
+      border-bottom: 1px solid var(--background);
+      transition: 0.3s ease-in;
+   }
+
+   .menu ul li:hover {
+      background: var(--background);
+   }
+   .menu ul li:hover a {
+      color: var(--Primary);
+   }
+
+   .menu ul li:first-of-type {
+      border-top: 1px solid var(--background);
+   }
+
+   .menu ul li a {
+      color: var(--background);
+      font-size: 1.25rem;
+   }
+}
+/* _______________________________________________________________ */
